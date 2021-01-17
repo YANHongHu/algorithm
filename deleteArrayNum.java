@@ -1,18 +1,18 @@
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
-
-class Node{
+class Nodes{
     int num;
+    Nodes next;
 
-    Node() {
+    public Nodes() {}
+
+
+    public Nodes(int _val) {
+        num = _val;
     }
-
-    Node(int n){
-        this.num = n;
-    }
-
-    Node next;
 }
+
 
 public class deleteArrayNum {
     public static void main(String[] args) {
@@ -22,22 +22,8 @@ public class deleteArrayNum {
             return;
         if(n>1000)
             n = 999;
-        Node cur = new Node();
-        Node head = new Node(0);
-        cur = head;
-        for(int i = 1;i<n;i++) {
-            cur.next = new Node(i);
-            cur = cur.next;
-        }
-        cur.next = head;
-        Node flag = cur;
-        cur = head;
-        while (cur.next!=cur){
-            flag = cur.next;
-            cur = flag.next;
-            flag.next=cur.next;
-            cur = cur.next;
-        }
+        Nodes cur = new Nodes();
+        //Nodes cur = testAll.getNodes(n);
         System.out.println(cur.num);
     }
 }

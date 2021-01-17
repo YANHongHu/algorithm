@@ -14,7 +14,7 @@ public class testAll {
     }
 
     private static int others(int n){
-        List<Integer> list = new ArrayList<Integer>();
+        List<Integer> list = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             list.add(i);
         }
@@ -27,15 +27,21 @@ public class testAll {
     }
 
     private static int me(int n){
-        Node cur;
-        Node head = new Node(0);
+        Nodes cur;
+        cur = getNodes(n);
+        return cur.num;
+    }
+
+    static Nodes getNodes(int n) {
+        Nodes cur;
+        Nodes head = new Nodes(0);
         cur = head;
         for(int i = 1;i<n;i++) {
-            cur.next = new Node(i);
+            cur.next = new Nodes(i);
             cur = cur.next;
         }
         cur.next = head;
-        Node flag = cur;
+        Nodes flag = cur;
         cur = head;
         while (cur.next!=cur){
             flag = cur.next;
@@ -43,6 +49,6 @@ public class testAll {
             flag.next=cur.next;
             cur = cur.next;
         }
-        return cur.num;
+        return cur;
     }
 }

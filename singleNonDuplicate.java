@@ -1,5 +1,3 @@
-import sun.rmi.transport.proxy.RMIDirectSocketFactory;
-
 import java.util.Hashtable;
 
 public class singleNonDuplicate {

@@ -1,5 +1,3 @@
-import com.sun.deploy.security.SelectableSecurityManager;
-import com.sun.org.apache.xpath.internal.objects.XObject;
 
 public class deleteDuplicates {
     public static class ListNode {
